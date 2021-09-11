@@ -6,8 +6,8 @@ void swap(int index1, int index2, int array[]) {
     array[index1] = temp_holder;
 }
 
-int insertion_sort(int list[15]) {
-    for (size_t i = 1; i < 16; ++i){
+int insertion_sort(int N, int list[N]) {
+    for (size_t i = 1; i <= N; ++i){
         int value_to_sort = list[i];
 
         while (list[i - 1] > value_to_sort && i > 0) {
@@ -16,7 +16,7 @@ int insertion_sort(int list[15]) {
         }
     }
 
-    for (size_t i = 0; i < 15; ++i) {
+    for (size_t i = 0; i < N; ++i) {
         printf("%d ", list[i]);
     }
 }
@@ -24,5 +24,6 @@ int insertion_sort(int list[15]) {
 
 int main() {
     int list[15] = {5,6,5,1,5,7,8,1,2,4,6,7,8,9,0};
-    insertion_sort(list);
+    int length = sizeof(list) / sizeof(list[0]);
+    insertion_sort(length, list);
 }
